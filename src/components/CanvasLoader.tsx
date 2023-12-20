@@ -1,11 +1,8 @@
 import { Html, useProgress } from "@react-three/drei";
-import { FC } from "react";
 
-interface CanvasLoaderProps {}
-
-const CanvasLoader: FC<CanvasLoaderProps> = ({}) => {
+const CanvasLoader = () => {
   const { progress } = useProgress();
-
+  console.log("progress", progress);
   return (
     <Html
       as="div"
@@ -17,7 +14,7 @@ const CanvasLoader: FC<CanvasLoaderProps> = ({}) => {
         flexDirection: "column",
       }}
     >
-      <span className="text-xs w-4 h-4 rounded-full relative -ml-2.5 animate-spin duration-1100 infinite ease-linear transform translate-z-0"></span>
+      <span className="canvas-loader"></span>
       <p
         style={{
           fontSize: 14,

@@ -1,9 +1,8 @@
+import { LoadingProvider } from "@/components/Providers/Loading";
 import { cn } from "@/lib/utils";
-import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Providers } from "@/components/Providers";
-
+import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,9 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "bg-img")}>
-        <Providers>{children}</Providers>
-      </body>
+      <LoadingProvider>
+        <body
+          className={cn(
+            inter.className,
+            "overflow-y-scroll overflow-x-hidden bg-[#030014]"
+          )}
+        >
+          {children}
+        </body>
+      </LoadingProvider>
     </html>
   );
 }

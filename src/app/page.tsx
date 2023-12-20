@@ -1,29 +1,28 @@
-import Attachments from "@/components/Attachments";
+import Attachments from "@/components/Attachments/Attachments";
 import Contact from "@/components/Contact";
-import Hero from "@/components/Hero";
+import Encryption from "@/components/EncryptedSection/Encryption";
+import Hero from "@/components/Hero/Hero";
+import StarsCanvas from "@/components/Models3D/StarsCanvas";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
+import { LoadingContext } from "@/components/Providers/Loading";
+import Skills from "@/components/Skills/Skills";
 
+import { useContext, useEffect } from "react";
+import dynamic from "next/dynamic";
+import Loader from "@/components/Loader";
 export default function Home() {
+  const Main = dynamic(() => import("../components/main"), {
+    ssr: false,
+    loading: () => (
+      <div className="z-50 fixed flex items-center justify-center h-screen w-screen">
+        <Loader />
+      </div>
+    ),
+  });
   return (
-    <div className="relative z-0 min-h-screen ">
-      <Attachments />
-      <Navbar />
-      <Hero />
-
-      {/* about */}
-
-      {/* experince */}
-
-      {/* skills */}
-
-      {/* projects */}
-      <Project />
-
-      {/* <div className="z-0">
-        contact
-        <Contact />
-      </div> */}
-    </div>
+    <main className="flex flex-col items-center justify-center h-full w-full min-h-screen">
+      <Main />
+    </main>
   );
 }
