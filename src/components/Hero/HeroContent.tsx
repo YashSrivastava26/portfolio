@@ -9,39 +9,37 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC, useContext } from "react";
 import { HiOutlineSparkles } from "react-icons/hi2";
-import { LoadingContext } from "../Providers/Loading";
 import { buttonVariants } from "../ui/button";
 interface HeroContentProps {}
 
 const HeroContent: FC<HeroContentProps> = ({}) => {
-  const { setLoading } = useContext(LoadingContext);
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse md:flex-row items-center justify-center px-8 md:px-20 w-full z-10"
+      className="flex flex-col-reverse lg:flex-row items-center justify-center px-8 lg:px-20 w-full z-10"
     >
       <div className="flex flex-col justify-center gap-5 h-full w-full m-auto text-start">
         <motion.div
           variants={slideInFromTop(0.2)}
           className="hero-box py-2 pr-3 pl-2 border border-[#7042f88b] opacity-[0.9]"
         >
-          <HiOutlineSparkles className="text-[#b49bff] h-4 w-4 mr-2 md:mr-3 md:h-5 md:w-5" />
-          <h1 className="hero-text text-xs md:text-sm">Portfolio</h1>
+          <HiOutlineSparkles className="text-[#b49bff] h-4 w-4 mr-2 lg:mr-3 lg:h-5 lg:w-5" />
+          <h1 className="hero-text !text-xs lg:!text-sm">Portfolio</h1>
         </motion.div>
         <motion.div
           variants={slideInFromLeft(0.2)}
-          className="flex flex-col gap-4 mt-2 md:mt-4 text-xl md:text-4xl font-bold text-primary-foreground md:max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-4 mt-2 lg:mt-4 text-xl lg:text-4xl font-bold text-primary-foreground lg:max-w-[600px] w-auto h-auto"
         >
           <span>
             Crafting Digital Realities: Journey with me!{" "}
-            <span className="text-transparent text-2xl md:text-5xl bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent text-2xl md:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               Yash Srivastava
             </span>{" "}
             through Code.
           </span>
           <motion.p
-            className="text-lg text-muted-foreground md:my-5 max-w-[600px] "
+            className="text-lg text-muted-foreground lg:my-5 max-w-[600px] "
             variants={slideInFromLeft(0.4)}
           >
             I&apos;m a Full Stack Developer
@@ -54,14 +52,14 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
             "p-[1px]  text-center  cursor-pointer rounded-xl w-fit h-fit bg-primary/70 hover:bg-primary/90"
           )}
         >
-          <div className="w-full h-full bg-background rounded-xl py-2 flex items-center justify-center shadow-[inset_0_0_20px] shadow-primary/60 hover:shadow-primary/70 px-4 md:px-8 text-xs md:text-base">
+          <div className="w-full h-full bg-background rounded-xl py-2 flex items-center justify-center shadow-[inset_0_0_20px] shadow-primary/60 hover:shadow-primary/70 px-4 lg:px-8 text-xs lg:text-base">
             Know More!
           </div>
         </motion.a>
       </div>
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="mt-36 md:mt-0 w-full h-fit md:h-full flex flex-col justify-center items-center relative"
+        className="mt-36 lg:mt-0 w-full h-fit lg:h-full flex flex-col justify-center items-center relative"
       >
         <div className="absolute w-[70%] h-[75%] z-[-1] top-[10%]">
           <svg
@@ -113,16 +111,13 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
             </path>
           </svg>
         </div>
-        <div className="h-56 w-32 md:h-96 md:w-96">
+        <div className="h-56 w-32 lg:h-96 lg:w-96 object-contain relative">
           <Image
-            src="/glaxy.png"
+            src="/main-2.png"
             alt="Hero Image"
             fill
-            className="object-fill"
+            className="h-56 lg:h-96 w-auto"
             priority
-            onLoad={(e) => {
-              setLoading(false);
-            }}
           />
         </div>
       </motion.div>

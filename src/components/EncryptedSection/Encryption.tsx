@@ -4,49 +4,50 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
-import AboutMe from "../AboutMe";
-import { MdOutlineEnhancedEncryption } from "react-icons/md";
-import { Cedarville_Cursive } from "next/font/google";
+import AboutMe from "./AboutMe";
+import { Caveat } from "next/font/google";
 interface EncryptionProps {}
-const cursive = Cedarville_Cursive({
-  weight: ["400"],
+const caveat = Caveat({
   subsets: ["latin"],
 });
 
 const Encryption: FC<EncryptionProps> = ({}) => {
   const [lockOpen, setLockOpen] = useState<boolean>(false);
+  const [videoEnded, setVideoEnded] = useState<boolean>(false);
   const [displayAboutMe, setDisplayAboutMe] = useState<boolean>(false);
-  useEffect(() => {
-    console.log(lockOpen);
-  }, [lockOpen]);
 
   const openLockOnClick = () => {
     setLockOpen(true);
   };
   const handleVideoEnded = () => {
     if (lockOpen) {
-      setDisplayAboutMe(true);
+      setVideoEnded(true);
     } else {
-      console.log("lock closed");
+      setVideoEnded(false);
     }
   };
   return (
     <section
       id="about-me"
-      className="flex flex-col min-h-screen relative items-center justify-center w-full h-full bg-transparent z-10 py-16"
+      className="flex flex-col h-screen relative items-center justify-center w-full z-10 pt-16"
     >
       {displayAboutMe && <AboutMe />}
-      <AnimatePresence>
-        {displayAboutMe ? null : (
-          <>
-            <div className=" w-full h-auto top-8 z-[5]">
+      <AnimatePresence
+        onExitComplete={() => setDisplayAboutMe(videoEnded || lockOpen)}
+      >
+        {!videoEnded && (
+          <motion.div
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ duration: 1 }}
+            className="w-full h-full flex flex-col items-center justify-start relative bg-transparent"
+          >
+            <div className="mt-8 w-screen h-full z-[5] overflow-hidden">
               <motion.div
                 variants={slideInFromTop(0.35)}
-                exit={{ opacity: 0, scale: 0.5 }}
-                className="flex justify-center gap-x-2 items-center text-4xl font-medium text-center text-secondary-foreground w-full"
+                className="flex justify-center gap-x-2 items-center font-medium text-center text-secondary-foreground w-full mt-8 text-2xl xl:text-4xl"
               >
                 Performance
-                <span className="text-transparent text-5xl bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                   &amp;
                 </span>{" "}
                 Security
@@ -56,8 +57,8 @@ const Encryption: FC<EncryptionProps> = ({}) => {
                 variants={slideInFromTop(0.5)}
                 exit={{ opacity: 0, scale: 0.5 }}
                 className={cn(
-                  "text-xl text-secondary mt-4 text-center font-medium text-[#b49bff]",
-                  cursive.className
+                  "text-xl text-secondary mt-4 text-center font-semibold text-[#b49bff]",
+                  caveat.className
                 )}
               >
                 Data is Encrypted click on the lock to open it
@@ -65,9 +66,8 @@ const Encryption: FC<EncryptionProps> = ({}) => {
             </div>
 
             <motion.div
-              exit={{ scale: 0.5, opacity: 0 }}
               transition={{ duration: 1 }}
-              className="w-full h-fit flex items-start justify-center relative"
+              className="absolute top-[30%] md:top-[25%] xl:top-[20%] w-screen md:w-full h-fit flex items-start justify-center overflow-hidden"
             >
               <video
                 loop={!lockOpen}
@@ -75,7 +75,7 @@ const Encryption: FC<EncryptionProps> = ({}) => {
                 autoPlay
                 playsInline
                 preload="false"
-                className="w-full h-auto z-[-1]"
+                className=" w-[150vw] md:w-[70%] 2xl:w-full h-auto z-[-1] !max-w-none"
                 src="/encryption.webm/"
                 onEnded={handleVideoEnded}
               />
@@ -93,22 +93,27 @@ const Encryption: FC<EncryptionProps> = ({}) => {
                     alt="lock"
                     width={60}
                     height={60}
-                    className={cn("translate-y-6 transition-all duration-200", {
-                      "translate-y-0 -translate-x-6 -rotate-45": lockOpen,
-                      "group-hover:translate-y-5": !lockOpen,
-                    })}
+                    className={cn(
+                      "translate-y-3 md:translate-y-4 2xl:translate-y-7 transition-all duration-200 w-[40px] md:w-[50px] 2xl:w-[70px] h-auto",
+                      {
+                        "translate-y-1 md:translate-y-0.5 -translate-x-6 2xl:-translate-x-7 -rotate-45":
+                          lockOpen,
+                        "group-hover:translate-y-2 md:group-hover:translate-y-3 2xl:group-hover:translate-y-5":
+                          !lockOpen,
+                      }
+                    )}
                   />
                   <Image
                     src="/LockMain.png"
                     alt="lock"
                     width={70}
                     height={70}
-                    className="z-10"
+                    className="h-auto w-[50px] md:w-[60px] 2xl:w-[80px] z-10"
                   />
                 </div>
               </motion.div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>

@@ -19,17 +19,17 @@ const Project: FC<ProjectProps> = ({}) => {
   });
 
   return (
-    <motion.div
+    <motion.section
       initial="hidden"
-      className=" relative flex items-center justify-around flex-col md:w-full max-w-7xl mx-auto space-y-10 md:p-2 px-4 z-10"
+      className=" relative flex items-center justify-around flex-col lg:w-full max-w-7xl mx-auto space-y-10 lg:p-2 px-4 z-10"
       id="projects"
     >
       <div
         ref={refsArray[0].ref}
-        className="w-full flex bg-muted/50 md:bg-inherit shadow-sm rounded-md shadow-white md:shadow-none max-w-full overflow-hidden p-2 md:p-4 xl:p-7 mt-20"
+        className="w-full flex bg-muted/50 lg:bg-inherit shadow-sm rounded-md shadow-white lg:shadow-none overflow-hidden p-2 lg:p-4 xl:p-7 mt-20 max-w-md lg:max-w-full"
       >
         <motion.div
-          className="w-[55%] hidden md:block relative group cursor-pointer"
+          className="w-[55%] hidden lg:block relative group cursor-pointer"
           variants={slideInFromLeft(0.4)}
           animate={refsArray[0].inView ? "visible" : "hidden"}
         >
@@ -47,15 +47,15 @@ const Project: FC<ProjectProps> = ({}) => {
           />
         </motion.div>
         <motion.div
-          className="w-full relative p-2 md:p-0 md:w-[45%] text-muted-foreground"
+          className="w-full relative p-2 lg:p-0 lg:w-[45%] text-muted-foreground"
           variants={slideInFromRight(0.4)}
           animate={refsArray[0].inView ? "visible" : "hidden"}
         >
-          <div className="md:h-1/2 md:bottom-1/2 md:w-full flex flex-col md:justify-end md:items-end">
-            <div className="flex md:flex-col items-center justify-between md:justify-end md:items-end">
+          <div className="lg:h-1/2 lg:bottom-1/2 lg:w-full flex flex-col lg:justify-end lg:items-end">
+            <div className="flex lg:flex-col items-center justify-between lg:justify-end lg:items-end">
               <Link
                 href={mainProject[0].url || mainProject[0].github}
-                className="uppercase text-xl md:hover:text-primary md:text-secondary-foreground/70 md:text-2xl py-3 font-bold"
+                className="uppercase text-xl lg:hover:text-primary lg:text-secondary-foreground/70 lg:text-2xl py-3 font-bold"
               >
                 {mainProject[0].name}
               </Link>
@@ -63,7 +63,7 @@ const Project: FC<ProjectProps> = ({}) => {
               <div className="flex space-x-5">
                 <Link
                   href={mainProject[0].github}
-                  className="text-muted-foreground hover:text-primary cursor-pointer h-[1rem] md:h-1.35rem"
+                  className="text-muted-foreground hover:text-primary cursor-pointer h-[1rem] lg:h-1.35rem"
                 >
                   <Github />
                 </Link>
@@ -77,10 +77,10 @@ const Project: FC<ProjectProps> = ({}) => {
                 )}
               </div>
             </div>
-            <ul className="flex flex-wrap justify-start md:justify-end gap-3 my-3 md:pl-4 w-full">
+            <ul className="flex flex-wrap justify-start lg:justify-end gap-3 my-3 lg:pl-4 w-full">
               {mainProject[0].skills.map((skill, idx) => (
                 <li
-                  className="hero-box pr-3 pl-2 border border-[#7042f88b] opacity-[0.9] hero-text px-4 md:px-6 py-1 text-xs md:text-sm"
+                  className="hero-box pr-3 pl-2 border border-[#7042f88b] opacity-[0.9] hero-text px-4 lg:px-6 py-1 text-xs lg:text-sm"
                   key={idx}
                 >
                   {skill}
@@ -89,7 +89,7 @@ const Project: FC<ProjectProps> = ({}) => {
             </ul>
           </div>
 
-          <div className="text-sm xl:text-base md:absolute h-fit md:max-h-[45%] md:w-[135%] md:z-10 md:top-1/2 md:right-0 md:bg-muted md:backdrop-blur-xl md:shadow-md md:rounded-md p-1 md:py-2 md:px-3 xl:p-5 md:shadow-gray-800">
+          <div className="text-sm xl:text-base lg:absolute h-fit lg:max-h-[45%] lg:w-[135%] lg:z-10 lg:top-1/2 lg:right-0 lg:bg-muted lg:backdrop-blur-xl lg:shadow-md lg:rounded-md p-1 lg:py-2 lg:px-3 xl:p-5 lg:shadow-gray-800">
             {mainProject[0].description}
           </div>
         </motion.div>
@@ -97,18 +97,18 @@ const Project: FC<ProjectProps> = ({}) => {
       {/* ------------------------------------------------------------------------------------ */}
       <div
         ref={refsArray[1].ref}
-        className="w-full flex bg-muted/50 md:bg-inherit shadow-sm rounded-md shadow-white md:shadow-none max-w-full overflow-hidden p-2 md:p-4 xl:p-7"
+        className="w-full flex bg-muted/50 lg:bg-inherit shadow-sm rounded-md shadow-white lg:shadow-none max-w-md lg:max-w-full overflow-hidden p-2 lg:p-4 xl:p-7"
       >
         <motion.div
           variants={slideInFromLeft(0.4)}
           animate={refsArray[1].inView ? "visible" : "hidden"}
-          className="w-full relative p-2 md:p-0 md:w-[45%] text-muted-foreground"
+          className="w-full relative p-2 lg:p-0 lg:w-[45%] text-muted-foreground"
         >
-          <div className="md:h-1/2 md:bottom-1/2 md:w-full flex flex-col md:justify-end md:items-start">
-            <div className="flex md:flex-col items-center justify-between md:justify-end md:items-start">
+          <div className="lg:h-1/2 lg:bottom-1/2 lg:w-full flex flex-col lg:justify-end lg:items-start">
+            <div className="flex lg:flex-col items-center justify-between lg:justify-end lg:items-start">
               <Link
                 href={mainProject[1].url || mainProject[1].github}
-                className="uppercase text-xl md:hover:text-primary md:text-secondary-foreground/70 md:text-2xl py-3 font-bold"
+                className="uppercase text-xl lg:hover:text-primary lg:text-secondary-foreground/70 lg:text-2xl py-3 font-bold"
               >
                 {mainProject[1].name}
               </Link>
@@ -116,7 +116,7 @@ const Project: FC<ProjectProps> = ({}) => {
               <div className="flex space-x-5">
                 <Link
                   href={mainProject[1].github}
-                  className="text-muted-foreground hover:text-primary cursor-pointer h-[1rem] md:h-1.35rem"
+                  className="text-muted-foreground hover:text-primary cursor-pointer h-[1rem] lg:h-1.35rem"
                 >
                   <Github />
                 </Link>
@@ -130,10 +130,10 @@ const Project: FC<ProjectProps> = ({}) => {
                 )}
               </div>
             </div>
-            <ul className="flex flex-wrap justify-start md:justify-start gap-3 my-3 md:pr-4 w-full">
+            <ul className="flex flex-wrap justify-start lg:justify-start gap-3 my-3 lg:pr-4 w-full">
               {mainProject[1].skills.map((skill, idx) => (
                 <li
-                  className="hero-box pr-3 pl-2 border border-[#7042f88b] opacity-[0.9] hero-text px-4 md:px-6 py-1 text-xs md:text-sm"
+                  className="hero-box pr-3 pl-2 border border-[#7042f88b] opacity-[0.9] hero-text px-4 lg:px-6 py-1 text-xs lg:text-sm"
                   key={idx}
                 >
                   {skill}
@@ -142,14 +142,14 @@ const Project: FC<ProjectProps> = ({}) => {
             </ul>
           </div>
 
-          <div className="text-sm xl:text-base md:absolute h-fit md:max-h-[45%] md:w-[135%] md:z-10 md:top-1/2 md:left-0 md:bg-muted md:backdrop-blur-xl md:shadow-md md:rounded-md p-1 md:py-2 md:px-3 xl:p-5 md:shadow-gray-800">
+          <div className="text-sm xl:text-base lg:absolute h-fit lg:max-h-[45%] lg:w-[135%] lg:z-10 lg:top-1/2 lg:left-0 lg:bg-muted lg:backdrop-blur-xl lg:shadow-md lg:rounded-md p-1 lg:py-2 lg:px-3 xl:p-5 lg:shadow-gray-800">
             {mainProject[1].description}
           </div>
         </motion.div>
         <motion.div
           variants={slideInFromRight(0.4)}
           animate={refsArray[1].inView ? "visible" : "hidden"}
-          className="w-[55%] hidden md:block relative group cursor-pointer"
+          className="w-[55%] hidden lg:block relative group cursor-pointer"
         >
           <Image
             src={mainProject[1].image}
@@ -168,12 +168,12 @@ const Project: FC<ProjectProps> = ({}) => {
       {/* ------------------------------------------------------------------------------------ */}
       <div
         ref={refsArray[2].ref}
-        className="w-full flex bg-muted/50 md:bg-inherit shadow-sm rounded-md shadow-white md:shadow-none max-w-full overflow-hidden p-2 md:p-4 xl:p-7"
+        className="w-full flex bg-muted/50 lg:bg-inherit shadow-sm rounded-md shadow-white lg:shadow-none max-w-md lg:max-w-full overflow-hidden p-2 lg:p-4 xl:p-7"
       >
         <motion.div
           variants={slideInFromLeft(0.4)}
           animate={refsArray[2].inView ? "visible" : "hidden"}
-          className="w-[55%] hidden md:block relative group cursor-pointer"
+          className="w-[55%] hidden lg:block relative group cursor-pointer"
         >
           <Image
             src={mainProject[2].image}
@@ -191,13 +191,13 @@ const Project: FC<ProjectProps> = ({}) => {
         <motion.div
           variants={slideInFromRight(0.4)}
           animate={refsArray[2].inView ? "visible" : "hidden"}
-          className="w-full relative p-2 md:p-0 md:w-[45%] text-muted-foreground"
+          className="w-full relative p-2 lg:p-0 lg:w-[45%] text-muted-foreground"
         >
-          <div className="md:h-1/2 md:bottom-1/2 md:w-full flex flex-col md:justify-end md:items-end">
-            <div className="flex md:flex-col items-center justify-between md:justify-end md:items-end">
+          <div className="lg:h-1/2 lg:bottom-1/2 lg:w-full flex flex-col lg:justify-end lg:items-end">
+            <div className="flex lg:flex-col items-center justify-between lg:justify-end lg:items-end">
               <Link
                 href={mainProject[2].url || mainProject[2].github}
-                className="uppercase text-xl md:hover:text-primary md:text-secondary-foreground/70 md:text-2xl py-3 font-bold"
+                className="uppercase text-xl lg:hover:text-primary lg:text-secondary-foreground/70 lg:text-2xl py-3 font-bold"
               >
                 {mainProject[2].name}
               </Link>
@@ -205,7 +205,7 @@ const Project: FC<ProjectProps> = ({}) => {
               <div className="flex space-x-5">
                 <Link
                   href={mainProject[2].github}
-                  className="text-muted-foreground hover:text-primary cursor-pointer h-[1rem] md:h-1.35rem"
+                  className="text-muted-foreground hover:text-primary cursor-pointer h-[1rem] lg:h-1.35rem"
                 >
                   <Github />
                 </Link>
@@ -219,10 +219,10 @@ const Project: FC<ProjectProps> = ({}) => {
                 )}
               </div>
             </div>
-            <ul className="flex flex-wrap justify-start md:justify-end gap-3 my-3 md:pl-4 w-full">
+            <ul className="flex flex-wrap justify-start lg:justify-end gap-3 my-3 lg:pl-4 w-full">
               {mainProject[0].skills.map((skill, idx) => (
                 <li
-                  className="hero-box pr-3 pl-2 border border-[#7042f88b] opacity-[0.9] hero-text px-4 md:px-6 py-1 text-xs md:text-sm"
+                  className="hero-box pr-3 pl-2 border border-[#7042f88b] opacity-[0.9] hero-text px-4 lg:px-6 py-1 text-xs lg:text-sm"
                   key={idx}
                 >
                   {skill}
@@ -231,12 +231,12 @@ const Project: FC<ProjectProps> = ({}) => {
             </ul>
           </div>
 
-          <div className="text-sm xl:text-base md:absolute h-fit md:max-h-[45%] md:w-[135%] md:z-10 md:top-1/2 md:right-0 md:bg-muted md:backdrop-blur-xl md:shadow-md md:rounded-md p-1 md:py-2 md:px-3 xl:p-5 md:shadow-gray-800">
+          <div className="text-sm xl:text-base lg:absolute h-fit lg:max-h-[45%] lg:w-[135%] lg:z-10 lg:top-1/2 lg:right-0 lg:bg-muted lg:backdrop-blur-xl lg:shadow-md lg:rounded-md p-1 lg:py-2 lg:px-3 xl:p-5 lg:shadow-gray-800">
             {mainProject[2].description}
           </div>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 

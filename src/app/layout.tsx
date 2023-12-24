@@ -1,8 +1,8 @@
-import { LoadingProvider } from "@/components/Providers/Loading";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,16 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <LoadingProvider>
-        <body
-          className={cn(
-            inter.className,
-            "overflow-y-scroll overflow-x-hidden bg-[#030014]"
-          )}
-        >
-          {children}
-        </body>
-      </LoadingProvider>
+      <body
+        className={cn(
+          inter.className,
+          "overflow-y-scroll overflow-x-hidden bg-[#030014]"
+        )}
+      >
+        {children}
+        <Toaster position="bottom-center" reverseOrder={false} />
+      </body>
     </html>
   );
 }

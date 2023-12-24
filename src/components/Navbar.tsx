@@ -17,7 +17,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
             window.scrollTo(0, 0);
           }}
         >
-          <Logo className="h-12 w-fit" />
+          <Logo className="h-12 w-fit !stroke-white" />
         </Link>
 
         <div className="flex">

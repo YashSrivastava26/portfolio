@@ -15,7 +15,7 @@ const Main: FC<MainProps> = ({}) => {
     <>
       <Navbar />
       <Attachments />
-      <div className="flex flex-col items-center gap-20 w-screen max-w-7xl ">
+      <div className="flex flex-col items-center gap-20 w-screen max-w-7xl overflow-x-hidden">
         <Hero />
         <Encryption />
         <Project />
