@@ -7,7 +7,7 @@ import {
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { HiOutlineSparkles } from "react-icons/hi2";
 import { buttonVariants } from "../ui/button";
 interface HeroContentProps {}

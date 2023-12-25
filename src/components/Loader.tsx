@@ -1,10 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { Icons } from "./Icons";
-import { SiGeeksforgeeks, SiGithub, SiLeetcode } from "react-icons/si";
-import { GrLinkedinOption } from "react-icons/gr";
-import { slideInFromTop } from "@/lib/animation";
+import { FC } from "react";
+import AttachmentTooltip from "./Attachments/AttachmentTooltip";
 import Logo from "./Logo";
-import Link from "next/link";
 import ResumeDownLoad from "./ResumeDownLoad";
 import {
   Tooltip,
@@ -12,8 +8,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { attachments } from "@/data/attachments";
-import AttachmentTooltip from "./Attachments/AttachmentTooltip";
 interface LoaderProps {}
 
 const Loader: FC<LoaderProps> = ({}) => {

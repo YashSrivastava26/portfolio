@@ -1,10 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import { buttonVariants } from "./ui/button";
 import Logo from "./Logo";
+import { buttonVariants } from "./ui/button";
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {

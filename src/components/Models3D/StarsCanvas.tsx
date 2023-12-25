@@ -1,10 +1,9 @@
 "use client";
-import { useState, useRef, Suspense, use } from "react";
+import { PointMaterial, Points } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Preload, useProgress } from "@react-three/drei";
+import { Suspense, useRef, useState } from "react";
 // @ts-ignore
 import * as random from "maath/random/dist/maath-random.esm";
-import Loading from "../Loading";
 import CanvasLoader from "../CanvasLoader";
 
 const Stars = (props: any) => {

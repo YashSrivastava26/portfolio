@@ -2,10 +2,10 @@
 import { slideInFromTop } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import { FC, useEffect, useState } from "react";
-import AboutMe from "./AboutMe";
 import { Caveat } from "next/font/google";
+import Image from "next/image";
+import { FC, useState } from "react";
+import AboutMe from "./AboutMe";
 interface EncryptionProps {}
 const caveat = Caveat({
   subsets: ["latin"],

@@ -29,7 +29,10 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experince }) => {
         className="text-sm text-secondary-foreground/70 list-disc pl-4"
       >
         {experince.description.map((desc, index) => (
-          <motion.li variants={slideInFromRight(0.4 + index * 0.15)}>
+          <motion.li
+            variants={slideInFromRight(0.4 + index * 0.15)}
+            key={index}
+          >
             {desc}
           </motion.li>
         ))}

@@ -1,16 +1,5 @@
-import Attachments from "@/components/Attachments/Attachments";
-import Contact from "@/components/Contact";
-import Encryption from "@/components/EncryptedSection/Encryption";
-import Hero from "@/components/Hero/Hero";
-import StarsCanvas from "@/components/Models3D/StarsCanvas";
-import Navbar from "@/components/Navbar";
-import Project from "@/components/Project";
-import { LoadingContext } from "@/components/Providers/Loading";
-import Skills from "@/components/Skills/Skills";
-
-import { useContext, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Loader from "@/components/Loader";
+import dynamic from "next/dynamic";
 export default function Home() {
   const Main = dynamic(() => import("../components/main"), {
     ssr: false,

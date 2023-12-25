@@ -1,23 +1,15 @@
 "use client";
+import { experience } from "@/data/EducationAndExperince";
 import { slideInFromLeft } from "@/lib/animation";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  MutableRefObject,
-  use,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useState } from "react";
+import { LuArrowLeftCircle, LuArrowRightCircle } from "react-icons/lu";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { ButtonGroupProps } from "react-multi-carousel/lib/types";
 import EducationCard from "./EducationCard";
 import ExperienceCard from "./ExperienceCard";
-import { experience } from "@/data/EducationAndExperince";
-import Carousel from "react-multi-carousel";
-import { ButtonGroupProps, ArrowProps } from "react-multi-carousel/lib/types";
-import "react-multi-carousel/lib/styles.css";
-import { LuArrowLeftCircle, LuArrowRightCircle } from "react-icons/lu";
-import { on } from "events";
 
 interface CarouselButtonGroupProps extends ButtonGroupProps {
   className?: string;
@@ -191,7 +183,7 @@ const ExperienceAndEducation = () => {
           <div className="flex w-full flex-col pl-4 py-1 gap-y-2">
             {experience.map((exp, i) => {
               if (experienceOption === i) {
-                return <ExperienceCard experince={exp} />;
+                return <ExperienceCard experince={exp} key={i} />;
               }
               return null;
             })}

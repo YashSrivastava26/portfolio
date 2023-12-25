@@ -1,7 +1,6 @@
 "use client";
-import { FC } from "react";
-import { Icons } from "./Icons";
 import { LucideProps } from "lucide-react";
+import { Icons } from "./Icons";
 
 const ResumeDownLoad = (props: LucideProps) => {
   const downloadResume = () => {
