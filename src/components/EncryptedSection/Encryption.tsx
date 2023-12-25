@@ -97,9 +97,9 @@ const Encryption: FC<EncryptionProps> = ({}) => {
                       "translate-y-3 md:translate-y-4 2xl:translate-y-7 transition-all duration-200 w-[40px] md:w-[50px] 2xl:w-[70px] h-auto",
                       {
                         "translate-y-1 md:translate-y-2 2xl:translate-y-3 -translate-x-6 2xl:-translate-x-7 -rotate-45":
-                          true,
+                          lockOpen,
                         "group-hover:translate-y-2 md:group-hover:translate-y-3 2xl:group-hover:translate-y-5":
-                          false,
+                          !lockOpen,
                       }
                     )}
                   />
