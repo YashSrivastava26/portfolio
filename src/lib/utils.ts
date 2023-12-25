@@ -42,8 +42,7 @@ export function constructMetaData({
       images: [image],
     },
     icons,
-    metadataBase: new URL("https://doc-guru-pi.vercel.app"),
-    themeColor: "#fff",
+    metadataBase: new URL("https://yash-srivastava.vercel.app"),
     ...(noIndex && {
       robots: {
         index: false,
