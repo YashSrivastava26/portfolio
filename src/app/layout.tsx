@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import { Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         {children}
         <Toaster position="bottom-center" reverseOrder={false} />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

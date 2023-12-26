@@ -25,7 +25,7 @@ const Skills: FC<SkillsProps> = ({}) => {
           loop
           playsInline
           className="w-full h-auto min-w-[750px]"
-          src="/cards-video.webm"
+          src="https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/cards-video.webm"
         />
       </div>
     </section>

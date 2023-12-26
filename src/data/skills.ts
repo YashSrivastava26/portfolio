@@ -32,7 +32,8 @@ export const Backend_skill: Skill[] = [
   },
   {
     skill_name: "Stripe Payment Intergation",
-    Image: "/skills/stripe.webp",
+    Image:
+      "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/skills/stripe.webp",
   },
   {
     skill_name: "Open AI model integration",
@@ -44,11 +45,13 @@ export const Backend_skill: Skill[] = [
   },
   {
     skill_name: "Pinecone DB",
-    Image: "/skills/pinecone.png",
+    Image:
+      "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/skills/pinecone.png",
   },
   {
     skill_name: "Supabase",
-    Image: "/skills/supabase.png",
+    Image:
+      "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/skills/supabase.png",
   },
   {
     skill_name: "Redis",
@@ -88,15 +91,17 @@ export const Frontend: Skill[] = [
   },
   {
     skill_name: "Material UI",
-    Image: "/skills/mui.png",
+    Image: "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/skills/mui.png",
   },
   {
     skill_name: "React Query",
-    Image: "/skills/reactquery.png",
+    Image:
+      "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/skills/reactquery.png",
   },
   {
     skill_name: "Framer Motion",
-    Image: "/skills/framer.png",
+    Image:
+      "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/skills/framer.png",
   },
   {
     skill_name: "Digital Ocean",

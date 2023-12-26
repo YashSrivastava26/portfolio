@@ -12,7 +12,7 @@ interface LoaderProps {}
 
 const Loader: FC<LoaderProps> = ({}) => {
   return (
-    <div className="h-full w-full min-h-screen flex flex-col justify-center items-center gap-4">
+    <div className="h-full w-full min-h-screen flex flex-col justify-center items-center gap-4 z-[100]">
       <Logo className="h-auto 2xl:w-[15%] xl:w-[20%] lg:w-[25%] md:w-[30%] sm:w-[35%] w-[40%]" />
 
       <div className="flex items-center justify-center text-muted-foreground text-base gap-8 relative text-center">

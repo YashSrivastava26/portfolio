@@ -76,7 +76,7 @@ const Encryption: FC<EncryptionProps> = ({}) => {
                 playsInline
                 preload="false"
                 className=" w-[150vw] md:w-[70%] 2xl:w-full h-auto z-[-1] !max-w-none"
-                src="/encryption.webm/"
+                src="https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/encryption.webm"
                 onEnded={handleVideoEnded}
               />
               <motion.div

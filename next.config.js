@@ -2,7 +2,7 @@
 
 const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
-  disable: false,
+  disable: process.env.NODE_ENV === "development",
   cacheOnFrontendNav: true,
   reloadOnOnline: true,
   workboxOptions: {
@@ -18,6 +18,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "img.icons8.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
       },
     ],
   },
