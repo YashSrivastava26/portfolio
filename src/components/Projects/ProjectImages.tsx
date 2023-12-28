@@ -1,4 +1,4 @@
-import { mainProject } from "@/data/projects";
+import { MainProject, mainProject } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
@@ -9,13 +9,14 @@ import { cn } from "@/lib/utils";
 
 interface ProjectImagesProps {
   arrowDir: "left" | "right";
+  project: MainProject;
 }
 
 interface CarouselButtonGroupProps extends ButtonGroupProps {
   className?: string;
 }
 
-const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir }) => {
+const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir, project }) => {
   const responsive = {
     all: {
       breakpoint: { max: 4000, min: 0 },
@@ -23,12 +24,6 @@ const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir }) => {
     },
   };
 
-  const project = [
-    mainProject[0],
-    mainProject[0],
-    mainProject[0],
-    mainProject[0],
-  ];
   const CarouselNavigation = ({ next, previous }: CarouselButtonGroupProps) => {
     return (
       <div
@@ -38,13 +33,25 @@ const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir }) => {
         })}
       >
         <FaAngleLeft
-          className="bg-background/70 h-5 w-5 cursor-pointer z-30 rounded-[4px]"
+          className={cn(
+            "bg-background/70 h-5 w-5 cursor-pointer z-30 rounded-[4px]",
+            {
+              "group-hover:text-background group-hover:bg-muted-foreground/60":
+                project.theme === "dark",
+            }
+          )}
           onClick={() => {
             if (previous) previous();
           }}
         />
         <FaAngleRight
-          className="bg-background/70 h-5 w-5 cursor-pointer z-30 rounded-[4px]"
+          className={cn(
+            "bg-background/70 h-5 w-5 cursor-pointer z-30 rounded-[4px]",
+            {
+              "group-hover:text-background group-hover:bg-muted-foreground/60":
+                project.theme === "dark",
+            }
+          )}
           onClick={() => {
             if (next) next();
           }}
@@ -60,8 +67,12 @@ const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir }) => {
         className={cn(
           "h-0.5 rounded-md transition-all duration-500 ease-in-out",
           {
-            "bg-secondary-foreground w-6 group-hover:bg-primary": active,
-            "bg-secondary w-4 group-hover:bg-muted/60": !active,
+            "bg-secondary-foreground w-6 group-hover:bg-primary":
+              active && project.theme === "light",
+            "bg-secondary w-4 group-hover:bg-muted/60":
+              !active && project.theme === "light",
+            "bg-primary w-6": active && project.theme === "dark",
+            "bg-secondary-foreground w-4": !active && project.theme === "dark",
           }
         )}
         onClick={() => {
@@ -90,17 +101,16 @@ const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir }) => {
       dotListClass="bg-transparent gap-x-2 !mb-1"
       customDot={<CustomDot />}
     >
-      {project.map((proj, idx) => (
-        <div className="w-full h-auto z-[5]" key={idx}>
+      {project.image.map((img, idx) => (
+        <div className="w-full h-96 z-[5]" key={idx}>
           <Image
-            src={proj.image}
-            alt={proj.name}
-            width={800}
-            height={600}
+            src={img}
+            alt={project.name}
+            fill
             className="shadow-sm shadow-gray-600 rounded-md grayscale group-hover:grayscale-0"
           />
           <Link
-            href={mainProject[0].url || mainProject[0].github}
+            href={project.url || project.github}
             target="_blank"
             className="absolute w-full h-full top-0 left-0 rounded-md bg-indigo-500 opacity-50 group-hover:opacity-0 delay-75 transition-opacity duration-200"
           />

@@ -17,9 +17,9 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse lg:flex-row items-center justify-center px-8 lg:px-20 w-full z-10"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-8 pt-16 w-full z-10 min-h-full"
     >
-      <div className="flex flex-col justify-center gap-5 h-full w-full m-auto text-start">
+      <div className="h-[40%] md:h-full w-full md:w-[60%] flex flex-col justify-center pl-4">
         <motion.div
           variants={slideInFromTop(0.2)}
           className="hero-box py-2 pr-3 pl-2 border border-[#7042f88b] opacity-[0.9]"
@@ -27,53 +27,53 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
           <HiOutlineSparkles className="text-[#b49bff] h-4 w-4 mr-2 lg:mr-3 lg:h-5 lg:w-5" />
           <h1 className="hero-text !text-xs lg:!text-sm">Portfolio</h1>
         </motion.div>
+
         <motion.div
           variants={slideInFromLeft(0.2)}
-          className="flex flex-col gap-4 mt-2 lg:mt-4 text-xl lg:text-4xl font-bold text-primary-foreground lg:max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-2 xl:gap-3 md:gap-4 mt-2 lg:mt-4 text-xl sm:text-2xl md:text-3xl 2xl:text-4xl font-bold text-primary-foreground lg:max-w-[600px] w-auto h-auto"
         >
           <span>
             Crafting Digital Realities: Journey with me!{" "}
-            <span className="text-transparent text-2xl md:text-4xl xl:text-5xl bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent text-2xl md:text-4xl 2xl:text-5xl bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 font-bold">
               Yash Srivastava
             </span>{" "}
             through Code.
           </span>
           <motion.p
-            className="text-lg text-muted-foreground lg:my-5 max-w-[600px] "
+            className="text-lg text-muted-foreground max-w-[600px] "
             variants={slideInFromLeft(0.4)}
           >
             I&apos;m a Full Stack Developer
           </motion.p>
+          <motion.a
+            variants={slideInFromLeft(0.6)}
+            className={cn(
+              buttonVariants(),
+              "p-[1px]  text-center  cursor-pointer rounded-xl w-fit h-fit bg-primary/70 hover:bg-primary/90"
+            )}
+          >
+            <div className="w-full h-full bg-background rounded-xl py-2 flex items-center justify-center shadow-[inset_0_0_20px] shadow-primary/60 hover:shadow-primary/70 px-4 lg:px-8 text-xs lg:text-sm 2xl:text-base">
+              Know More!
+            </div>
+          </motion.a>
         </motion.div>
-        <motion.a
-          variants={slideInFromLeft(0.6)}
-          className={cn(
-            buttonVariants(),
-            "p-[1px]  text-center  cursor-pointer rounded-xl w-fit h-fit bg-primary/70 hover:bg-primary/90"
-          )}
-        >
-          <div className="w-full h-full bg-background rounded-xl py-2 flex items-center justify-center shadow-[inset_0_0_20px] shadow-primary/60 hover:shadow-primary/70 px-4 lg:px-8 text-xs lg:text-base">
-            Know More!
-          </div>
-        </motion.a>
       </div>
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="mt-36 lg:mt-0 w-full h-fit lg:h-full flex flex-col justify-center items-center relative"
-      >
-        <div className="absolute w-[70%] h-[75%] z-[-1] top-[10%]">
-          <svg
-            viewBox="0 0 500 500"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            id="blobSvg"
-          >
-            <path fill="#a855f7">
-              <animate
-                attributeName="d"
-                dur="10000ms"
-                repeatCount="indefinite"
-                values="M442.5,312.5Q444,375,391.5,410.5Q339,446,277,470.5Q215,495,152,465.5Q89,436,67.5,373Q46,310,39,248Q32,186,83.5,151.5Q135,117,179.5,91.5Q224,66,287.5,47Q351,28,405,72Q459,116,450,183Q441,250,442.5,312.5Z;
+      <div className="h-[60%] md:h-full w-full md:w-[40%] flex flex-col justify-center">
+        <div className="h-[70vh] min-h-[36rem] w-full relative flex items-center justify-center">
+          <div className="w-[80%] translate-y-14 2xl:translate-y-16 absolute">
+            <svg
+              viewBox="0 0 500 500"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              id="blobSvg"
+              className="object-cover w-full h-full"
+            >
+              <path fill="#a855f7">
+                <animate
+                  attributeName="d"
+                  dur="10000ms"
+                  repeatCount="indefinite"
+                  values="M442.5,312.5Q444,375,391.5,410.5Q339,446,277,470.5Q215,495,152,465.5Q89,436,67.5,373Q46,310,39,248Q32,186,83.5,151.5Q135,117,179.5,91.5Q224,66,287.5,47Q351,28,405,72Q459,116,450,183Q441,250,442.5,312.5Z;
                 M445.5,316.5Q457,383,399.5,417Q342,451,283,440Q224,429,159,430Q94,431,77,368.5Q60,306,70.5,253Q81,200,85,132Q89,64,154,49Q219,34,275.5,52.5Q332,71,390.5,96.5Q449,122,441.5,186Q434,250,445.5,316.5Z;
                 M448.5,301Q408,352,379.5,411.5Q351,471,284,473.5Q217,476,174,431.5Q131,387,84,350Q37,313,56.5,256Q76,199,87,136.5Q98,74,156.5,40Q215,6,271,44Q327,82,362.5,118.5Q398,155,443.5,202.5Q489,250,448.5,301Z;
                 M437.5,306Q424,362,382,405Q340,448,282,438.5Q224,429,178,407.5Q132,386,71.5,353Q11,320,17.5,252Q24,184,77,148Q130,112,174.5,73Q219,34,285.5,30.5Q352,27,403,73Q454,119,452.5,184.5Q451,250,437.5,306Z;
@@ -82,23 +82,23 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
                 M473.5,317Q459,384,402,420.5Q345,457,283,453.5Q221,450,174.5,420.5Q128,391,90.5,349.5Q53,308,43.5,247.5Q34,187,81.5,148.5Q129,110,175.5,84.5Q222,59,281.5,55Q341,51,400.5,83Q460,115,474,182.5Q488,250,473.5,317Z;
                 M456.5,303.5Q417,357,383,412.5Q349,468,286.5,448.5Q224,429,169,418Q114,407,85,357Q56,307,63.5,252Q71,197,95,148Q119,99,167,51.5Q215,4,272.5,39.5Q330,75,368.5,112Q407,149,451.5,199.5Q496,250,456.5,303.5Z;
                 M442.5,312.5Q444,375,391.5,410.5Q339,446,277,470.5Q215,495,152,465.5Q89,436,67.5,373Q46,310,39,248Q32,186,83.5,151.5Q135,117,179.5,91.5Q224,66,287.5,47Q351,28,405,72Q459,116,450,183Q441,250,442.5,312.5Z;"
-              ></animate>
-            </path>
-          </svg>
-        </div>
-        <div className="absolute w-[70%] h-[75%] z-[-1] top-[10%] blur-3xl">
-          <svg
-            viewBox="0 0 500 500"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            id="blobSvg"
-          >
-            <path fill="#a855f7">
-              <animate
-                attributeName="d"
-                dur="10000ms"
-                repeatCount="indefinite"
-                values="M442.5,312.5Q444,375,391.5,410.5Q339,446,277,470.5Q215,495,152,465.5Q89,436,67.5,373Q46,310,39,248Q32,186,83.5,151.5Q135,117,179.5,91.5Q224,66,287.5,47Q351,28,405,72Q459,116,450,183Q441,250,442.5,312.5Z;
+                ></animate>
+              </path>
+            </svg>
+          </div>
+          <div className="w-[80%] translate-y-14 2xl:translate-y-16 absolute blur-3xl">
+            <svg
+              viewBox="0 0 500 500"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              id="blobSvg"
+            >
+              <path fill="#a855f7">
+                <animate
+                  attributeName="d"
+                  dur="10000ms"
+                  repeatCount="indefinite"
+                  values="M442.5,312.5Q444,375,391.5,410.5Q339,446,277,470.5Q215,495,152,465.5Q89,436,67.5,373Q46,310,39,248Q32,186,83.5,151.5Q135,117,179.5,91.5Q224,66,287.5,47Q351,28,405,72Q459,116,450,183Q441,250,442.5,312.5Z;
                 M445.5,316.5Q457,383,399.5,417Q342,451,283,440Q224,429,159,430Q94,431,77,368.5Q60,306,70.5,253Q81,200,85,132Q89,64,154,49Q219,34,275.5,52.5Q332,71,390.5,96.5Q449,122,441.5,186Q434,250,445.5,316.5Z;
                 M448.5,301Q408,352,379.5,411.5Q351,471,284,473.5Q217,476,174,431.5Q131,387,84,350Q37,313,56.5,256Q76,199,87,136.5Q98,74,156.5,40Q215,6,271,44Q327,82,362.5,118.5Q398,155,443.5,202.5Q489,250,448.5,301Z;
                 M437.5,306Q424,362,382,405Q340,448,282,438.5Q224,429,178,407.5Q132,386,71.5,353Q11,320,17.5,252Q24,184,77,148Q130,112,174.5,73Q219,34,285.5,30.5Q352,27,403,73Q454,119,452.5,184.5Q451,250,437.5,306Z;
@@ -107,20 +107,15 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
                 M473.5,317Q459,384,402,420.5Q345,457,283,453.5Q221,450,174.5,420.5Q128,391,90.5,349.5Q53,308,43.5,247.5Q34,187,81.5,148.5Q129,110,175.5,84.5Q222,59,281.5,55Q341,51,400.5,83Q460,115,474,182.5Q488,250,473.5,317Z;
                 M456.5,303.5Q417,357,383,412.5Q349,468,286.5,448.5Q224,429,169,418Q114,407,85,357Q56,307,63.5,252Q71,197,95,148Q119,99,167,51.5Q215,4,272.5,39.5Q330,75,368.5,112Q407,149,451.5,199.5Q496,250,456.5,303.5Z;
                 M442.5,312.5Q444,375,391.5,410.5Q339,446,277,470.5Q215,495,152,465.5Q89,436,67.5,373Q46,310,39,248Q32,186,83.5,151.5Q135,117,179.5,91.5Q224,66,287.5,47Q351,28,405,72Q459,116,450,183Q441,250,442.5,312.5Z;"
-              ></animate>
-            </path>
-          </svg>
+                ></animate>
+              </path>
+            </svg>
+          </div>
+          <div className="w-[60%] max-h-[65%] -translate-y-8 aspect-[2/3] absolute object-cover">
+            <Image src="/main-1.png" alt="Hero Image" fill priority />
+          </div>
         </div>
-        <div className="h-56 w-32 lg:h-96 lg:w-96 object-contain relative">
-          <Image
-            src="/main-2.png"
-            alt="Hero Image"
-            fill
-            className="h-56 lg:h-96 w-auto"
-            priority
-          />
-        </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

@@ -34,7 +34,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, index }) => {
         variants={slideInFromLeft(0.4)}
         animate={inView ? "visible" : "hidden"}
       >
-        <ProjectImages arrowDir={index % 2 == 0 ? "left" : "right"} />
+        <ProjectImages
+          arrowDir={index % 2 == 0 ? "left" : "right"}
+          project={project}
+        />
       </motion.div>
       <motion.div
         className={cn(

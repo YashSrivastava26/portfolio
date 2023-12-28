@@ -160,7 +160,7 @@ const Contact: FC<ContactProps> = ({}) => {
               minRows={3}
               maxRows={4}
               className={cn(
-                "bg-card/70 resize-none text-base pr-3 lg:pr-6 py-3 scrollbar-thumb-primary scrollbar-thumb-rounded scrollbar-track-secondary scrollbar-w-2 scrolling-touch",
+                "bg-card/70 resize-none text-base pr-3 lg:pr-6 py-3 scrollbar-thumb-secondary scrollbar-thumb-rounded-md scrollbar-track-secondary scrollbar-w-1 scrolling-touch",
                 formError.message && "focus-visible:ring-red-500"
               )}
             />

@@ -168,4 +168,34 @@
       transparent 100%
     );
   }
+  .scrollbar-w-1::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+  .scrollbar-w-2::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .scrollbar-track-secondary::-webkit-scrollbar-track {
+    --bg-opacity: 0.5;
+    background-color: #23162b15;
+  }
+
+  .scrollbar-thumb-secondary::-webkit-scrollbar-thumb {
+    --bg-opacity: 0.5;
+    background-color: #bfa7ca74;
+  }
+
+  .scrollbar-track-primary::-webkit-scrollbar-track {
+    @apply bg-muted bg-opacity-50;
+  }
+
+  .scrollbar-thumb-primary::-webkit-scrollbar-thumb {
+    @apply bg-primary bg-opacity-50;
+  }
+
+  .scrollbar-thumb-rounded-md::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+  }
 }

@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "overflow-y-scroll overflow-x-hidden bg-[#030014]"
+          "overflow-y-scroll overflow-x-hidden bg-[#030014] scrollbar-thumb-primary scrollbar-thumb-rounded-md scrollbar-track-primary scrollbar-w-2 scrolling-touch"
         )}
       >
         {children}
