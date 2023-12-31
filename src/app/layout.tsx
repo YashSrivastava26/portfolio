@@ -31,8 +31,8 @@ export default function RootLayout({
       >
         {children}
         <Toaster position="bottom-center" reverseOrder={false} />
-        {/* <SpeedInsights />
-        <Analytics /> */}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
