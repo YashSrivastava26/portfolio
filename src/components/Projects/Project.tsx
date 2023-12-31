@@ -9,7 +9,7 @@ const Project: FC<ProjectProps> = ({}) => {
   return (
     <motion.div
       initial="hidden"
-      className=" relative flex items-center justify-around flex-col md:w-full max-w-7xl mx-auto space-y-10 md:p-2 px-4 z-10"
+      className=" relative flex items-center justify-around flex-col w-full max-w-7xl mx-auto space-y-10 md:pt-20 md:p-2 px-4 z-10"
       id="projects"
     >
       {mainProject.map((project, idx) => (

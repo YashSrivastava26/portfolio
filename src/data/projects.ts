@@ -13,7 +13,7 @@ export const mainProject: MainProject[] = [
   {
     name: "Doc Guru",
     description:
-      "Developed an end-to-end Software as a Service (SaaS) product utilizing a cutting-edge tech stack, including Next.js, TypeScript, Tailwind CSS, GPT-3.5 Turbo, Pinecone VectorDB, Prisma ORM, and the Text-embedding-ada-002 model.",
+      "A SaaS solution, empowering users to effortlessly upload PDF documents and seamlessly querying an AI model for precise insights. Leveraged advanced models for efficient data processing, ensuring prompt and accurate responses.",
     url: "https://doc-guru-pi.vercel.app/",
     github: "https://github.com/YashSrivastava26/doc-guru",
     skills: [
@@ -40,17 +40,15 @@ export const mainProject: MainProject[] = [
   {
     name: "Learning Quest",
     description:
-      "Developed an end-to-end Software as a Service (SaaS) product utilizing a cutting-edge tech stack, including Next.js, TypeScript, Tailwind CSS, GPT-3.5 Turbo, Pinecone VectorDB, Prisma ORM, and the Text-embedding-ada-002 model.",
-    url: "https://doc-guru-pi.vercel.app/",
-    github: "https://github.com/YashSrivastava26/doc-guru",
+      "A SAAS application, simplifying the seamless creation of educational courses.It effortlessly crafts courses enriched with videos, complemented by knowledge assessments through quizzes, ensuring a comprehensive and engaging learning journey.",
+    github: "https://github.com/YashSrivastava26/learning-quest",
     skills: [
       "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "GPT-3.5 Turbo",
-      "Pinecone VectorDB",
-      "Prisma ORM",
-      "Text-embedding-ada-002 model",
+      "GPT-3.5",
+      "Youtube API",
+      "Prisma",
+      "Docker",
+      "Github Actions",
     ],
     image: [
       "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/project/learning-quest/learning-quest-1.png",
@@ -64,18 +62,10 @@ export const mainProject: MainProject[] = [
   {
     name: "Chat Dock",
     description:
-      "Developed an end-to-end Software as a Service (SaaS) product utilizing a cutting-edge tech stack, including Next.js, TypeScript, Tailwind CSS, GPT-3.5 Turbo, Pinecone VectorDB, Prisma ORM, and the Text-embedding-ada-002 model.",
-    url: "https://doc-guru-pi.vercel.app/",
-    github: "https://github.com/YashSrivastava26/doc-guru",
-    skills: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "GPT-3.5 Turbo",
-      "Pinecone VectorDB",
-      "Prisma ORM",
-      "Text-embedding-ada-002 model",
-    ],
+      "A web app where you can instantly connect and converse, secured by Google OAuth 2.0.  Elevate your chat experience with improved backend operations. All wrapped in a sleek Next.js and Tailwind CSS interface.",
+    url: "https://chatdock.vercel.app/",
+    github: "https://github.com/YashSrivastava26/chatdock",
+    skills: ["Next.js", "TypeScript", "Tailwind CSS", "Redis"],
     image: [
       "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/project/chat-dock/chat-dock-1.png",
       "https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/project/chat-dock/chat-dock-2.png",

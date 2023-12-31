@@ -14,7 +14,7 @@ const Hero: FC<HeroProps> = ({}) => {
         autoPlay
         muted
         loop
-        className="absolute rotate-180 top-16 translate-y-[-50%]"
+        className="absolute rotate-180 top-0 md:top-16 translate-y-[-50%] min-w-[500px]"
       >
         <source
           src="https://cdn.jsdelivr.net/gh/yashsrivastava2603/cdn/blackhole.webm"

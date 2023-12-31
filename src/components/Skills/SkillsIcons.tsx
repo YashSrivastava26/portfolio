@@ -30,7 +30,7 @@ const SkillsIcons: FC<SkillsIconsProps> = ({ src, index }) => {
       transition={{ delay: index * animationDelay }}
       className="h-12 w-12 md:h-20 md:w-20 object-cover relative"
     >
-      <Image src={src} alt="skills-icons" fill sizes="100%" />
+      <Image src={src} alt="skills-icons" fill />
     </motion.div>
   );
 };

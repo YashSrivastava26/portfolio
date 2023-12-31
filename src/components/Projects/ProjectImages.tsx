@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FC } from "react";
 import Carousel, { DotProps, ButtonGroupProps } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 
 interface ProjectImagesProps {
@@ -26,37 +26,43 @@ const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir, project }) => {
 
   const CarouselNavigation = ({ next, previous }: CarouselButtonGroupProps) => {
     return (
-      <div
-        className={cn("flex absolute items-end p-1 gap-x-1 bottom-0 z-30", {
-          "left-0": arrowDir === "left",
-          "right-0": arrowDir === "right",
-        })}
-      >
-        <FaAngleLeft
+      //   <div
+      //     className={cn("flex absolute items-end p-1 gap-x-1 bottom-0 z-30", {
+      //       "left-0": arrowDir === "left",
+      //       "right-0": arrowDir === "right",
+      //     })}
+      //   >
+      <>
+        <FiChevronLeft
           className={cn(
-            "bg-background/70 h-5 w-5 cursor-pointer z-30 rounded-[4px]",
+            "bg-background/60 h-6 w-6 md:w-5 p-1 pl-0.5 md:py-0 cursor-pointer z-30 rounded-full md:rounded-[4px] absolute left-1 md:bottom-1",
             {
               "group-hover:text-background group-hover:bg-muted-foreground/60":
                 project.theme === "dark",
+              "md:!left-1": arrowDir === "left",
+              "md:!right-7": arrowDir === "right",
             }
           )}
           onClick={() => {
             if (previous) previous();
           }}
         />
-        <FaAngleRight
+        <FiChevronRight
           className={cn(
-            "bg-background/70 h-5 w-5 cursor-pointer z-30 rounded-[4px]",
+            "bg-background/60 h-6 w-6 md:w-5 p-1 pr-0.5 md:py-0 cursor-pointer z-30 rounded-full md:rounded-[4px] absolute right-1 md:translate-y-0 md:bottom-1",
             {
               "group-hover:text-background group-hover:bg-muted-foreground/60":
                 project.theme === "dark",
+              "md:!left-7": arrowDir === "left",
+              "md:!right-1": arrowDir === "right",
             }
           )}
           onClick={() => {
             if (next) next();
           }}
         />
-      </div>
+      </>
+      // </div>
     );
   };
 
@@ -102,7 +108,7 @@ const ProjectImages: FC<ProjectImagesProps> = ({ arrowDir, project }) => {
       customDot={<CustomDot />}
     >
       {project.image.map((img, idx) => (
-        <div className="w-full h-96 z-[5]" key={idx}>
+        <div className="w-full z-[5] aspect-video" key={idx}>
           <Image
             src={img}
             alt={project.name}

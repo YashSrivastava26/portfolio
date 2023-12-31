@@ -4,16 +4,20 @@ import Link from "next/link";
 import { FC } from "react";
 import Logo from "./Logo";
 import { buttonVariants } from "./ui/button";
+import MobileNavbar from "./MobileNavbar";
+import Image from "next/image";
+import { LuMenu } from "react-icons/lu";
+
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
   return (
-    <nav className="w-full h-16 fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-40 px-10">
-      <div className="hidden md:flex h-full w-full justify-between  items-center max-w-7xl m-auto">
+    <nav className="hidden md:block w-full h-16 fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-40 px-10">
+      <div className="flex h-full w-full justify-between  items-center max-w-7xl m-auto">
         <Link
           href="/"
           onClick={() => {
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
           <Logo className="h-12 w-fit !stroke-white" />

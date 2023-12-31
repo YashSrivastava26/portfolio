@@ -9,9 +9,9 @@ interface AttachmentsProps {}
 
 const Attachments: FC<AttachmentsProps> = ({}) => {
   return (
-    <div className="fixed bottom-4 left-4 z-50">
+    <div className="fixed hidden md:block bottom-4 left-4 z-50">
       <Popover>
-        <PopoverTrigger className="z-50">
+        <PopoverTrigger className="z-50" asChild>
           <Paperclip className="bg-primary text-primary-foreground h-10 w-10 p-2.5 shadow-md hover:shadow-xl rounded-full z-50" />
         </PopoverTrigger>
         <PopoverContent

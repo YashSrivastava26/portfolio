@@ -14,11 +14,17 @@ import { cn } from "@/lib/utils";
 interface AttachmentTooltipProps extends IconBaseProps {
   animate?: boolean;
   containerClass?: string;
+  footerIcons?: boolean;
+  side?: "top" | "bottom" | "left" | "right";
+  sideOffset?: number;
 }
 
 const AttachmentTooltip: FC<AttachmentTooltipProps> = ({
   animate,
   containerClass = "",
+  side,
+  footerIcons,
+  sideOffset,
   ...props
 }) => {
   return (
@@ -39,10 +45,17 @@ const AttachmentTooltip: FC<AttachmentTooltipProps> = ({
                   style={{ animationDelay: `${1.35 + idx * 0.15}s` }}
                   aria-label={attachment.name}
                 >
-                  <attachment.icon {...props} />
+                  {footerIcons && attachment.footerIcon ? (
+                    <attachment.footerIcon {...props} />
+                  ) : (
+                    <attachment.icon {...props} />
+                  )}
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" sideOffset={8}>
+              <TooltipContent
+                side={side ?? "bottom"}
+                sideOffset={sideOffset ?? 8}
+              >
                 <p>{attachment.name}</p>
               </TooltipContent>
             </Tooltip>

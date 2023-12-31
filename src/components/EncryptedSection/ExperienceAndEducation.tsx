@@ -47,27 +47,34 @@ const ExperienceAndEducation = () => {
   }: CarouselButtonGroupProps) => {
     const { carouselState } = rest;
     return (
-      <div className="w-full flex items-center justify-between absolute z-[-1]">
+      <>
         <LuArrowLeftCircle
-          className={cn("text-muted-foreground h-5 w-5 cursor-pointer z-30", {
-            "text-secondary":
-              carouselState === undefined || carouselState?.currentSlide === 0,
-          })}
+          className={cn(
+            "text-muted-foreground h-5 w-5 cursor-pointer z-30 absolute top-1/2 left-0 -translate-y-1/2",
+            {
+              "text-secondary":
+                carouselState === undefined ||
+                carouselState?.currentSlide === 0,
+            }
+          )}
           onClick={() => {
             if (previous) previous();
           }}
         />
         <LuArrowRightCircle
-          className={cn("text-muted-foreground h-5 w-5 cursor-pointer z-30", {
-            "text-secondary":
-              carouselState === undefined ||
-              carouselState?.currentSlide === carouselState.totalItems - 1,
-          })}
+          className={cn(
+            "text-muted-foreground h-5 w-5 cursor-pointer z-30 absolute top-1/2 right-0 -translate-y-1/2",
+            {
+              "text-secondary":
+                carouselState === undefined ||
+                carouselState?.currentSlide === carouselState.totalItems - 1,
+            }
+          )}
           onClick={() => {
             if (next) next();
           }}
         />
-      </div>
+      </>
     );
   };
 

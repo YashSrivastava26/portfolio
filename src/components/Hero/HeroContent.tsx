@@ -17,7 +17,7 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse md:flex-row items-center justify-center px-8 pt-16 w-full z-10 min-h-full"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-8 pb-16 md:pb-0 md:pt-16 w-full z-10 min-h-full"
     >
       <div className="h-[40%] md:h-full w-full md:w-[60%] flex flex-col justify-center pl-4">
         <motion.div
@@ -59,7 +59,10 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
         </motion.div>
       </div>
       <div className="h-[60%] md:h-full w-full md:w-[40%] flex flex-col justify-center">
-        <div className="h-[70vh] min-h-[36rem] w-full relative flex items-center justify-center">
+        <motion.div
+          className=" h-full md:h-[70%] md:min-h-[36rem] w-full relative flex items-center justify-center"
+          variants={slideInFromRight(0.7)}
+        >
           <div className="w-[80%] translate-y-14 2xl:translate-y-16 absolute">
             <svg
               viewBox="0 0 500 500"
@@ -111,10 +114,10 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
               </path>
             </svg>
           </div>
-          <div className="w-[60%] max-h-[65%] -translate-y-8 aspect-[2/3] absolute object-cover">
+          <div className="w-[60%] max-h-[65%] md:-translate-y-8 aspect-[2/3] absolute object-cover">
             <Image src="/main-1.png" alt="Hero Image" fill priority />
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

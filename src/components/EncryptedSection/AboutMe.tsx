@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
 import ExperinceAndEducation from "./ExperienceAndEducation";
+import { aboutMe } from "@/data/EducationAndExperince";
 interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = ({}) => {
@@ -36,14 +37,8 @@ const AboutMe: FC<AboutMeProps> = ({}) => {
           </h3>
           <div className="border-b bg-clip-border border-transparent bg-gradient-to-r from-cyan-500 to-transparent flex-1"></div>
         </div>
-        <span className="text-sm mt-4 text-muted-foreground">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-          repellendus voluptatibus voluptas sapiente maxime doloribus eligendi
-          expedita, porro non assumenda quibusdam aliquid vel optio enim sit
-          esse. Nesciunt, voluptate? Sit. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. In eius impedit corporis! Qui atque iure eius velit,
-          repellat sunt repellendus facere corrupti esse, excepturi saepe. Magni
-          corrupti veritatis perspiciatis fuga?
+        <span className="text-sm md:text-sm mt-4 text-muted-foreground">
+          {aboutMe}
         </span>
 
         <ExperinceAndEducation />
