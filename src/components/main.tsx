@@ -55,8 +55,8 @@ const Main: FC<MainProps> = ({}) => {
             <Project />
             <Skills />
             <Contact />
-            <Footer ref={footerRef} />
           </div>
+          <Footer ref={footerRef} />
           <StarsCanvas />
         </>
       )}

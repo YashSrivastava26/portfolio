@@ -12,7 +12,7 @@ interface FooterProps {}
 const Footer = forwardRef<HTMLDivElement, FooterProps>((props, ref) => {
   return (
     <footer
-      className="relative w-full z-20 p-4 pb-8 bg-muted/90  flex flex-col lg:flex-row items-center lg:items-start justify-center lg:pt-8 gap-8 lg:gap-32"
+      className="relative lg:mt-16 lg:pt-8 w-full z-20 p-4 pb-8 bg-muted/90  flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-around "
       ref={ref}
     >
       <div className="flex flex-col items-center lg:items-start-start justify-center gap-4">
@@ -25,7 +25,7 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>((props, ref) => {
         <div
           className="text-lg cursor-pointer flex items-center justify-center bg-background rounded-full px-6 py-3 shadow-[inset_0_0px_20px] hover:shadow-[inset_0_0px_50px] !shadow-indigo-500 border-indigo-600 border-2"
           onClick={() => {
-            downloadResume;
+            downloadResume();
           }}
         >
           <Download className="h-5 w-5 mr-2 text-white" />
