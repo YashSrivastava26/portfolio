@@ -30,11 +30,23 @@ const Navbar: FC<NavbarProps> = ({}) => {
               buttonVariants({ variant: "ghost" }),
               "hover:shadow-[inset_0_0_20px] !shadow-primary shadow-none outline outline-none hover:outline-1 hover:outline-primary/70 hover:bg-transparent outline-offset-0 rounded-xl"
             )}
+            onClick={() => {
+              window.scrollTo({
+                top: document.getElementById("about-me")?.offsetTop,
+                behavior: "smooth",
+              });
+            }}
           >
             About Me
           </Link>
           <Link
             href="#about-me"
+            onClick={() => {
+              window.scrollTo({
+                top: document.getElementById("about-me")?.offsetTop,
+                behavior: "smooth",
+              });
+            }}
             className={cn(
               buttonVariants({ variant: "ghost" }),
               "hover:shadow-[inset_0_0_20px] !shadow-primary shadow-none outline outline-none hover:outline-1 hover:outline-primary/70 hover:bg-transparent outline-offset-0 rounded-xl"
@@ -44,6 +56,12 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </Link>
           <Link
             href="#projects"
+            onClick={() => {
+              window.scrollTo({
+                top: document.getElementById("projects")?.offsetTop,
+                behavior: "smooth",
+              });
+            }}
             className={cn(
               buttonVariants({ variant: "ghost" }),
               "hover:shadow-[inset_0_0_20px] !shadow-primary shadow-none outline outline-none hover:outline-1 hover:outline-primary/70 hover:bg-transparent outline-offset-0 rounded-xl"
@@ -53,6 +71,12 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </Link>
           <Link
             href="#contact"
+            onClick={() => {
+              window.scrollTo({
+                top: document.getElementById("contact")?.offsetTop,
+                behavior: "smooth",
+              });
+            }}
             className={cn(
               buttonVariants({ variant: "ghost" }),
               "hover:shadow-[inset_0_0_20px] !shadow-primary shadow-none outline outline-none hover:outline-1 hover:outline-primary/70 hover:bg-transparent outline-offset-0 rounded-xl"

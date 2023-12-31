@@ -52,7 +52,15 @@ const HeroContent: FC<HeroContentProps> = ({}) => {
               "p-[1px]  text-center  cursor-pointer rounded-xl w-fit h-fit bg-primary/70 hover:bg-primary/90"
             )}
           >
-            <div className="w-full h-full bg-background rounded-xl py-2 flex items-center justify-center shadow-[inset_0_0_20px] shadow-primary/60 hover:shadow-primary/70 px-4 lg:px-8 text-xs lg:text-sm 2xl:text-base">
+            <div
+              className="w-full h-full bg-background rounded-xl py-2 flex items-center justify-center shadow-[inset_0_0_20px] shadow-primary/60 hover:shadow-primary/70 px-4 lg:px-8 text-xs lg:text-sm 2xl:text-base"
+              onClick={() => {
+                window.scrollTo({
+                  top: document.getElementById("about-me")?.offsetTop,
+                  behavior: "smooth",
+                });
+              }}
+            >
               Know More!
             </div>
           </motion.a>
